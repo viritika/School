@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* font family */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Merriweather:ital,wght@0,700;1,300&family=Montserrat:ital,wght@1,400;1,500&family=PT+Serif:ital,wght@1,700&family=Permanent+Marker&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        /* main-heading */
+        .main-headingDIV {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15%;
+            margin: auto;
+            max-width: 1200px;
+            height: 100%;
+        }
+
+        .main-heading {
+            position: relative;
+        }
+
+        .main-heading::before {
+            content: "";
+            background-image: url('../WhatsApp\ Image\ 2024-01-31\ at\ 11.18.56\ AM.jpeg');
+            background-size: cover;
+            position: absolute;
+            background-position: 20%;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.33;
+        }
+
+        .main-heading .main-heading-text {
+            position: relative;
+            line-height: 0.7;
+            text-align: center;
+        }
+
+        .main-heading .main-heading-text h1 {
+            color: #B31312;
+            font-family: 'Merriweather', serif;
+            text-shadow: 1px 1px 1px #B31312;
+            letter-spacing: 5px;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: normal;
+
+        }
+
+        .main-heading .main-heading-text p {
+            color: gray;
+            font-weight: bold;
+        }
+
+        /* NAV */
+        .navigetion-bar {
+            background: #39A7FF;
+            text-align: center;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 10px 0px;
+            box-shadow: 1px 10px 10px #0000006e;
+            z-index: 100;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        .nav-itam .nav-list .nav-achar:before,
+        .nav-itam .nav-list .nav-achar:after {
+            position: absolute;
+            opacity: 0;
+            width: 0%;
+            height: 2px;
+            content: '';
+            background: #FFF;
+            transition: all 0.3s;
+        }
+
+        .nav-itam .nav-list .nav-achar:before {
+            left: 0px;
+            top: 0px;
+        }
+
+        .nav-itam .nav-list .nav-achar:after {
+            right: 0px;
+            bottom: 0px;
+        }
+
+        .nav-itam .nav-list .nav-achar:hover:before,
+        .nav-itam .nav-list .nav-achar:hover:after {
+            opacity: 1;
+            width: 100%;
+        }
+
+
+        .nav-itam {
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: visible;
+
+        }
+
+        .nav-list {
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* visibility: visible; */
+
+        }
+
+        .nav-itam .nav-list .nav-achar {
+            color: #fff;
+            text-decoration: none;
+            font: 18px Raleway;
+            margin: 0px 10px;
+            padding: 5px 10px;
+            position: relative;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .menu-btn,
+        .closebtn {
+            color: white;
+            font-size: 20px;
+            display: none;
+        }
+
+        /* dropdown */
+        .dropdown {
+            text-align: justify;
+            place-items: center;
+            align-items: center;
+        }
+
+        .Gallary-Dropdown {
+            visibility: hidden;
+            position: absolute;
+            background: #39A7FF;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: center;
+            min-width: 190px;
+            top: 40px;
+        }
+
+        .Gallary-Dropdown a {
+            display: grid;
+            text-decoration: none;
+            color: white;
+            padding: 20px 10px;
+        }
+
+        .dropdown:hover .Gallary-Dropdown {
+            visibility: visible;
+        }
+
+        .Gallary-Dropdown a:hover {
+            background: #ffffff30;
+            color: #FFF;
+        }
+
+        /* AboutUs-Dropdown */
+        .AboutUs-Dropdown {
+            position: absolute;
+            display: grid;
+            background: #39A7FF;
+            visibility: hidden;
+            top: 40px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            min-height: auto;
+        }
+
+        .ABOUT-Dropdown {
+            display: flex;
+        }
+
+        .AboutUs-Dropdown a {
+            text-decoration: none;
+            color: white;
+            padding: 20px 10px;
+        }
+
+        .AboutUs-Dropdown a:hover {
+            background: #ffffff30;
+            color: #FFF;
+        }
+
+        .ABOUT-Dropdown:hover .AboutUs-Dropdown {
+            visibility: visible;
+
+        }
+
+        /* MAIN */
+        .main {
+            max-width: 1200px;
+            margin: 80px auto auto;
+            padding: 10px;
+        }
+
+        .para {
+            padding: 20px 10px;
+        }
+
+        .para p {
+            padding: 10px;
+            letter-spacing: 0.0rem;
+            word-spacing: 1px;
+            margin-top: -5px;
+            line-height: 20px;
+            font-weight: 520;
+            font-size: 18px;
+
+        }
+
+        .main p {
+            font-size: 18px;
+        }
+
+
+        .heading {
+            color: #FFA732;
+            text-align: center;
+        }
+
+        .sub-heading {
+            color: #0802A3;
+            margin: 0;
+        }
+
+        /* footer */
+        footer {
+            background: #0C356A;
+        }
+
+        .main-footer {
+            color: #FFF;
+            display: flex;
+            justify-content: space-between;
+            text-align: justify;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-item {
+            width: 30%;
+            text-align: start;
+        }
+
+        .footer-list-link,
+        .footer-list {
+            line-height: 30px;
+        }
+
+
+        .footer-logo {
+            display: grid;
+            justify-content: center;
+            place-items: center;
+            gap: 10px;
+            height: 100%;
+            place-content: center;
+        }
+
+        .footer-logo i {
+            color: #3652AD;
+            font-size: 20px;
+            padding: 7px;
+        }
+
+        .quick-links {
+            display: grid;
+            text-align: start;
+            margin: auto;
+        }
+
+        .quick-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .aside-icon i {
+            font-size: large;
+            height: 10px;
+            width: 10px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .footer-list {
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .footer-list i {
+            padding: 0px 10px;
+            color: white;
+        }
+
+        .footer-second {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media only screen and (min-width:310px) and (max-width:439px) {
+
+            /* navigetion-main */
+            .main-heading {
+                padding-top: 10px;
+            }
+
+            .main-headingDIV {
+                display: grid;
+                place-items: center;
+                gap: 5px;
+            }
+
+            .main-heading .main-heading-text h1 {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .main-heading .main-heading-text p {
+                color: gray;
+                font-size: 13px;
+                line-height: normal;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            /* nav */
+            .navigetion-bar {
+                padding: 20px 0px;
+            }
+
+            .nav-itam {
+                margin: 0 auto;
+                text-align: center;
+                visibility: hidden;
+                line-height: 10px;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                left: 0;
+                position: fixed;
+                background-color: #39A7FF;
+                padding-top: 40px;
+                box-shadow: 1px 10px 20px #000;
+                z-index: 100;
+            }
+
+            .nav-list {
+                display: grid;
+                justify-content: center;
+                align-items: start;
+                text-align: justify;
+                height: 50%;
+                margin-top: -290px;
+                font-size: 10px;
+
+            }
+
+            .nav-itam .nav-list .nav-achar {
+                font-size: 13px;
+            }
+
+            .AboutUs-Dropdown {
+                position: absolute;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+                left: 10px;
+                top: 120px;
+                font-size: 13px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+
+            .Gallary-Dropdown {
+                position: absolute;
+                background: #fff;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                text-align: center;
+                min-width: 190px;
+                font-size: 14px;
+                left: 10px;
+                top: 290px;
+                padding: 4px 0px;
+
+            }
+
+            .AboutUs-Dropdown a {
+                text-decoration: none;
+                color: #39A7FF;
+                padding: 20px 10px;
+            }
+
+            .Gallary-Dropdown a {
+                text-decoration: none;
+                color: #39A7FF;
+                padding: 20px 10px;
+            }
+
+            .menu-btn {
+                color: #fff;
+                font-size: 20px;
+                display: block;
+                float: left;
+                position: absolute;
+                left: 15px;
+            }
+
+            .closebtn {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                background: transparent;
+                border: none;
+                display: block;
+            }
+
+
+            .myform {
+                padding: 0px 10px;
+                max-width: 290px;
+            }
+
+            .box-10 {
+                margin: 40px auto auto;
+            }
+
+            .nav-list .nav-achar {
+                text-align: start;
+                font-size: 12px;
+            }
+
+            .box-10-main-div {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+
+
+            /* footer */
+            .main-footer {
+                color: #FFF;
+                display: grid;
+                justify-content: center;
+                gap: 30px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .footer-item {
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+            }
+
+            .quick-links {
+                text-align: center;
+            }
+
+            .footer-logo i {
+                color: #3652AD;
+                font-size: 10px;
+                padding: 5px;
+            }
+
+            .footer-logo-img {
+                width: 50px;
+            }
+
+            .footer-list {
+                text-align: center;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer-second {
+                font-size: smaller;
+            }
+        }
+
+
+        @media only screen and (min-width:440px) and (max-width: 769px) {
+
+            /* navigetion-main */
+            .main-heading {
+                padding-top: 10px;
+            }
+
+            .main-headingDIV {
+                display: grid;
+                place-items: center;
+                gap: 2px;
+            }
+
+            .main-heading .main-heading-text h1 {
+                font-size: 25px;
+                letter-spacing: 1px;
+            }
+
+            .main-heading .main-heading-text p {
+                color: gray;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+
+            /* nav */
+            .navigetion-bar {
+                padding: 20px 0px;
+            }
+
+            .nav-itam {
+                margin: 0 auto;
+                text-align: center;
+                visibility: hidden;
+                line-height: 10px;
+                height: 100%;
+                width: 200px;
+                top: 0;
+                left: 0;
+                position: fixed;
+                background: #39A7FF;
+                padding-top: 40px;
+                box-shadow: 1px 10px 20px #000;
+                z-index: 100;
+            }
+
+            .nav-list {
+                display: grid;
+                justify-content: center;
+                align-items: start;
+                text-align: justify;
+                height: 50%;
+                margin-top: -290px;
+
+            }
+
+
+            .nav-itam .nav-list .nav-achar {
+                font-size: 14px;
+            }
+
+            .AboutUs-Dropdown {
+                position: absolute;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+                left: 10px;
+                top: 100px;
+                font-size: 13px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+
+            .Gallary-Dropdown {
+                position: absolute;
+                background: #fff;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                text-align: center;
+                min-width: 190px;
+                font-size: 14px;
+                left: 10px;
+                top: 250px;
+                padding: 4px 0px;
+
+            }
+
+            .AboutUs-Dropdown a {
+                text-decoration: none;
+                color: #39A7FF;
+                padding: 20px 10px;
+            }
+
+            .Gallary-Dropdown a {
+                text-decoration: none;
+                color: #39A7FF;
+                padding: 20px 10px;
+            }
+
+            .menu-btn {
+                color: #fff;
+                font-size: 20px;
+                display: block;
+                float: left;
+                position: absolute;
+                left: 15px;
+            }
+
+            .closebtn {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                background: transparent;
+                border: none;
+                display: block;
+            }
+
+
+
+            .myform {
+                padding: 20px 10px;
+                max-width: 400px;
+            }
+
+            .box-10 {
+                margin: 40px auto auto;
+            }
+
+            .nav-list .nav-achar {
+                text-align: start;
+                font-size: 14px;
+            }
+
+            .box-10-main-div {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            /* footer */
+            .main-footer {
+                color: #FFF;
+                display: grid;
+                justify-content: center;
+                gap: 30px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .footer-item {
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .quick-links {
+                text-align: center;
+            }
+
+            .footer-logo i {
+                color: #3652AD;
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            .footer-logo-img {
+                width: 50px;
+            }
+
+            .footer-list {
+                text-align: center;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer-second {
+                font-size: smaller;
+            }
+
+        }
+
+        @media only screen and (min-width:770px) and (max-width: 989px) {
+
+            /* navigetion-main */
+            .main-heading {
+                padding-top: 10px;
+            }
+
+            .main-headingDIV {
+                display: grid;
+                place-items: center;
+                gap: 5px;
+
+            }
+
+            .main-heading .main-heading-text h1 {
+                font-size: 30px;
+                letter-spacing: 1px;
+            }
+
+            .main-heading .main-heading-text p {
+                color: gray;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+
+            /* nav */
+
+            .logo {
+                width: 100px;
+            }
+
+            .navigetion-bar {
+                padding: 20px 0px;
+            }
+
+            .nav-itam {
+                margin: 0 auto;
+                text-align: center;
+                visibility: hidden;
+                line-height: 10px;
+                height: 100%;
+                width: 200px;
+                top: 0;
+                left: 0;
+                position: fixed;
+                background: #39A7FF;
+                padding-top: 40px;
+                box-shadow: 1px 10px 20px #000;
+                z-index: 100;
+            }
+
+            .nav-list {
+                display: grid;
+                justify-content: center;
+                align-items: start;
+                text-align: justify;
+                height: 50%;
+                margin-top: -290px;
+
+            }
+
+            .nav-itam .nav-list .nav-achar {
+                font-size: 14px;
+            }
+
+            .AboutUs-Dropdown {
+                position: absolute;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+                left: 10px;
+                top: 100px;
+                font-size: 13px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+
+            .Gallary-Dropdown {
+                position: absolute;
+                background: #fff;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                text-align: center;
+                min-width: 190px;
+                font-size: 14px;
+                left: 10px;
+                top: 250px;
+
+                padding: 4px 0px;
+
+            }
+
+            .AboutUs-Dropdown a {
+                text-decoration: none;
+                color: #39A7FF;
+                padding: 20px 10px;
+            }
+
+            .Gallary-Dropdown a {
+                text-decoration: none;
+                color: #39A7FF;
+                padding: 20px 10px;
+            }
+
+            .menu-btn {
+                color: #fff;
+                font-size: 20px;
+                display: block;
+                float: left;
+                position: absolute;
+                left: 15px;
+            }
+
+            .closebtn {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                background: transparent;
+                border: none;
+                display: block;
+            }
+
+
+            .box-10-main-div {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            /* footer */
+            .main-footer {
+                color: #FFF;
+                display: grid;
+                justify-content: center;
+                gap: 30px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .footer-item {
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .quick-links {
+                text-align: center;
+            }
+
+            .footer-logo i {
+                color: #3652AD;
+                font-size: 13px;
+                padding: 5px;
+            }
+
+            .footer-logo-img {
+                width: 50px;
+            }
+
+            .footer-list {
+                text-align: center;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .footer-second {
+                font-size: smaller;
+            }
+
+        }
+
+        @media only screen and (min-width:990px) and (max-width: 1200px) {
+            .main-heading {
+                padding-top: 10px;
+            }
+
+            .nav-list .nav-achar {
+                font-size: 13px;
+                padding: 0 0;
+            }
+
+            .main-headingDIV {
+                display: grid;
+                place-items: center;
+                gap: 5px;
+            }
+
+            .navigetion-bar {
+                padding: 10px 0px;
+            }
+
+            .nav-itam {
+                visibility: visible;
+            }
+
+            .main-heading .main-heading-text h1 {
+                font-size: 25px;
+                letter-spacing: 1px;
+            }
+
+            .main-heading .main-heading-text p {
+                color: gray;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .footer-logo-img {
+                width: 70px;
+            }
+
+            .footer-logo i {
+                color: #3652AD;
+                font-size: 13px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-heading">
+        <div class="main-headingDIV">
+            <div style="position: relative; ">
+                <img class="logo" src="../HOME/ll (1).jpg" alt="not" width="180px">
+            </div>
+            <div class="main-heading-text">
+                <h1 class="main-heading-headline">THE CAMBRIDGE VALLEY INTERNATIONAL SCHOOL </h1>
+                <p style="margin-top: -15px;"> AFFILIATED TO CENTRAL BOARD OF SECONDARY EDUCATION</p>
+                <p>AFFILIATION NO - 1131231 </p>
+                <p>SCHOOL CODE - 31218 </p>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="navigetion-bar" id="navbar">
+            <div class="nav-itam" id="mySidenav">
+                <div class="nav-list">
+                    <button class="closebtn" onclick="closeNav()"><i class="bi bi-x"></i></button>
+                    <a class="nav-achar" href="../index.html">Home</a>
+                    <div class="ABOUT-Dropdown">
+                        <a class="nav-achar" href="">About us</a>
+                        <div class="AboutUs-Dropdown">
+                            <a href="../SCHOOL-INFORMATION/School-info.html">SCHOOL INFORMATION</a>
+                            <a href="../VISION_&_MISSION/VISI_&MISS.html">VISION & MISSION</a>
+                            <a href="../TRUSTEES/TRUSTEES.html">TRUSTEES</a>
+                            <a href="../CERTIFICATION/CERTIFICATION.html">CERTIFICATION</a>
+                        </div>
+                    </div>
+                    <a class="nav-achar" href="../ACADEMICS-INFA/Academics-Infra.html"> Infrastructure</a>
+                    <a class="nav-achar" href="../ACTIVITY/Activity.html">Activities</a>
+                    <a class="nav-achar" href="../ADMISSION/Admission.html">Admission</a>
+                    <div class="dropdown">
+                        <a class="nav-achar" href="">Gallary</a>
+                        <div class="Gallary-Dropdown">
+                            <a href="../PHOTOS/photos.html">PHOTOS</a>
+                        </div>
+                    </div>
+                    <a class="nav-achar" href="../CONTACT/ContactUs.html">ContactUs</a>
+
+                </div>
+            </div>
+            <div class="menu-btn">
+                <i class="openbtn bi-list" onclick="openNav()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="main" id="#">
+        <h1 class="heading">ABOUT US</h1>
+        <div class="para">
+            <h3 class="sub-heading">About us </h3>
+            <p>Aadhar Foundations The Cambridge Valley International School is CBSE Affiliated School which has classes
+                from nursery to X standard. In the near future we plan to start a stream for higher classes. <br>
+                The School is located in a prominent area of Georai, Maharashtra and built over a six acre area. The
+                Cambridge Valley International School have dedicated campus, world class facilities and best educational
+                methodologies. each class contains only 40 students to maintain good quality of education. Our
+                classrooms make optimum use of technology and all are equipped with audio visual equipments. <br>The aim
+                of the school is to develop the child in an all round manner with focus on the child's physical,
+                intellectual, social, emotional and spiritual well being. The school strives hard to help the children
+                grow with a love for learning. The school helps the children, acquire critical thinking, and moral
+                values needed to become good citizens of tomorrow. <br>The well planned school campus houses academic
+                blocks, administrative blocks, food court, staff quarters, swimming pool, amphitheatre and outdoor &
+                indoor game facilities all within easy reach. <br>Our unique nurturing approach will give your child the
+                opportunity to develop into a joyful, confident learner who is prepared for success in school and in
+                life. </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Aim </h3>
+            <p>The Aim of The Cambridge Valley International School is to create future leaders using Technical
+                revolution and instilling values.</p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Lush Green Campus </h3>
+            <p>We have Lush Green Campus Sprawling over more than 6 acres. We have big ground where swimming pool,
+                badminton court, lawn tennis court and tennis court are available. The emphasis of the school's design
+                is on spaces that are cheerful, orderly, visually calm and hygienic all vital environmental components
+                in the imparting of a quality education. Multiple playgrounds fulfill all variety of sporting
+                requirements.
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Academic Building </h3>
+            <p>The Academic building has been built taking into consideration all the infrastructural needs &
+                international norms for a school. Every class contains 40 students. Each classroom occupies a large area
+                and is designed such that every student gets the teacher's maximum Individual attention. All the
+                classrooms are well. Ventilated. Each classroom is equipped with a projector and a visualize. Some of
+                the topics are taught with the help of this technology so as to make learning an Interactive.
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Sports Complex </h3>
+            <p>To encourage our students to be all-rounder in sports we have badminton court, lawn tennis court
+                basketball court and low depth swimming pool. A variety of indoor and outdoor activities are conducted
+                in the school. The school has appointed a trained Physical Trainer to train the children in various
+                indoor and outdoor games. We encourage students to participate in all the sports events.
+            </p>
+        </div>
+
+        <div class="para">
+            <h3 class="sub-heading">Canteen </h3>
+            <p>The Cambridge Valley International School provides a vegetarian diet for its pupils cooked in hygienic
+                kitchen under the direction of a well qualified and experienced catering staff. Menu is kept changing
+                every week which contains all nutritional value and at the same time every student will enjoy the tasty
+                food. It will include breakfast lunch. Food is always checked by headmaster for quality.
+
+
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">CCTV Surveillance </h3>
+
+            <p>Our school campus is under CCTV Surveillance. We monitor and keep track of activities taking place in
+                school premises. We keep track of attendance of students, teachers and support staff along with ensuring
+                they are all doing their work efficiently. CCTV Surveillance is useful in case of any emergencies.
+                Safety of our students is very important to us so that parents have not to worry about their safety.
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Experienced and Qualified Staff </h3>
+            <p>We have experienced & qualified staff from different states of India. They have been very carefully
+                selected out of the best available talents. These teachers are imbued with the spirit of dedication and
+                devotion. They are not only qualified but also have excellent personality and teaching background. Our
+                teachers create friendly environment with every child. Our teachers ignite a natural curiosity and love
+                for learning in our learners and guide them in their quest for knowledge.
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Laboratory </h3>
+            <p>We have three laboratories for our students: Math’s Lab, Science Lab and Computer Lab. Dedicated and
+                trained teachers are always at hand to help students with research and project work. Student usage of
+                media and technology in computer lab is monitored and supervised by teachers. Students perform the
+                entire science practical under the supervision of teachers. In math’s lab students learn different easy
+                techniques of doing math’s and intensive practice of hard problems.
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading">Fun while learning </h3>
+            <p>Our approach is based on widely accepted research that indicates that children experience the deepest,
+                most genuine learning when they are having fun. Highly trained teachers foster the cognitive and social
+                development of each child by lovingly guiding the class through play-based activities. We also conduct
+                different activities like story telling fruit day, flower day, field trip and many more.
+
+
+            </p>
+        </div>
+        <div class="para">
+            <h3 class="sub-heading"> Transport Facility </h3>
+
+            <p>Aadhar Foundations provides transport facility for school The Cambridge Valley International School for
+                the safe and comfortable commutation of children from house to school. We have ensured that every bus is
+                managed by well-trained and experienced drivers equipped with cell phone facility. Every Bus is equipped
+                with GPS tracking devices. Every bus also has a female attendant who is there throughout the journey. In
+                addition, our staff is also present on the school buses.
+        </div>
+    </div>
+    <footer>
+        <div class="main-footer">
+            <div class="footer-item">
+                <div class="footer-logo">
+                    <img src="../HOME/ll (1).jpg" alt="" width="100px" class="footer-logo-img">
+                    <div class="aside-icon">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-whatsapp"></i>
+                        <i class="bi bi-twitter"></i>
+                        <i class="bi bi-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="quick-links">
+                    <h3>Quick links</h3>
+                    <a href="../index.html" class="footer-list"> <i class="bi bi-chevron-double-right"></i>Home</a>
+                    <a href="../index.html" class="footer-list"> <i class="bi bi-chevron-double-right"></i>About us</a>
+                    <a href="../ACADEMICS-INFA/Academics-Infra.html" class="footer-list">
+                        <i class="bi bi-chevron-double-right"> </i>Academics Infrastructure
+                    </a>
+                    <a href="../ACTIVITY/Activity.html" class="footer-list">
+                        <i class="bi bi-chevron-double-right"></i>Activities
+                    </a>
+                    <a href="../ADMISSION/Admission.html" class="footer-list"> <i
+                            class="bi bi-chevron-double-right"></i>Admission</a>
+                    <a href="../index.html" class="footer-list"> <i class="bi bi-chevron-double-right"></i>Gallary</a>
+                    <a href="../CONTACT//ContactUs.html" class="footer-list"> <i
+                            class="bi bi-chevron-double-right"></i>ContactUs</a>
+
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="footer-info">
+                    <h3>ContactUs</h3>
+                    <p class="footer-list"> <i class="bi bi-geo-alt-fill"></i>Takadgaon, Beed, Maharashtra431127</p>
+                    <p class="footer-list"> <i class="bi bi-envelope-fill"></i>ganeshchalak197@gmail.com</p>
+                    <p class="footer-list"><i class="bi bi-telephone-fill"></i>+91-9403512197 / +91-9403512197</p>
+                    <p class="footer-list"><i class="bi bi-alarm-fill"></i>Mon - Sun : 07:00 AM - 06:00 PM </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-second">
+        <p>© Copyrights 2024 - 2025.R K Public School </p>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.visibility = "visible";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.visibility = "hidden";
+        }
+    </script>
+    <!-- NAVFIX -->
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
